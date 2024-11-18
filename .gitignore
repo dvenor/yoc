@@ -1,0 +1,38 @@
+# Ignore the .sfdx directory (local Salesforce CLI configs and tokens)
+.sfdx/
+
+# Ignore local VS Code workspace settings
+.vscode/
+
+# Ignore Node.js dependencies (if using Node.js in the project)
+node_modules/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files (e.g., JetBrains IDEs like IntelliJ or WebStorm)
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore temporary or build files
+*.tmp
+*.bak
+
+# Ignore deployment-specific files (if generated)
+deploy.log
+
+# Ignore environment files (if storing sensitive data locally)
+.env
+.env.local
+.env.*
+
+# Ignore other temporary files
+*.swp
+*.swo
+~$*
+
+# Ignore package-lock.json if you don't want to track dependencies (optional)
+package-lock.json
