@@ -1,0 +1,10 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+}

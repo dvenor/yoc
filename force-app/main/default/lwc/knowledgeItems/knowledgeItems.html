@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Card List" icon-name="custom:custom14">
+        <template if:true={data}>
+            <div class="card-grid">
+                <template for:each={data} for:item="item">
+                    <div key={item.id} class="card-item">
+                        <lightning-card title={item.title} icon-name="standard:account">
+                            <p>{item.description}</p>
+                        </lightning-card>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:false={data}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>
