@@ -5,7 +5,7 @@
                 <div key={group.category} class="card">
                     <h2 class="card-title">{group.category}</h2>
                     <ul class="card-list">
-                        <template for:each={group.items} for:item="item">
+                        <template for:each={group.items} for:item="item"> 
                             <li key={item.label}>
                                 <a href={item.url} target="_blank">{item.label}</a>
                             </li>

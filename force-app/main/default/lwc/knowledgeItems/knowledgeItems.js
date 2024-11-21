@@ -1,17 +1,16 @@
 import { LightningElement, wire, track } from 'lwc';
-import getCards from '@salesforce/apex/KnowledgeItemController.getCards';
+import getPublishedKnowledgeItems from '@salesforce/apex/KnowledgeItemController.getPublishedKnowledgeItems';
+
 
 export default class MyCards extends LightningElement {
     @track groupedData = [];
     isLoading = true;
 
-    @wire(getCards)
+    @wire(getPublishedKnowledgeItems)
     wiredCards({ error, data }) {
         if (data) {
             this.groupedData = this.groupByCategory(data);
             this.isLoading = false;
-            console.log(data);
-            console.log(data.length);
         } else if (error) {
             console.error('Error fetching card data:', error);
             this.isLoading = false;
