@@ -1,4 +1,4 @@
-import { createElement } from 'lwc';
+import { createElement } from '@lwc/engine-dom';
 import KnowledgeItems from 'c/knowledgeItems';
 
 describe('c-knowledge-items', () => {

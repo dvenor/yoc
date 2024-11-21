@@ -1,18 +1,21 @@
 <template>
-    <lightning-card title="Card List" icon-name="custom:custom14">
-        <template if:true={data}>
-            <div class="card-grid">
-                <template for:each={data} for:item="item">
-                    <div key={item.id} class="card-item">
-                        <lightning-card title={item.title} icon-name="standard:account">
-                            <p>{item.description}</p>
-                        </lightning-card>
-                    </div>
-                </template>
-            </div>
-        </template>
-        <template if:false={data}>
-            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
-        </template>
-    </lightning-card>
+    <template if:true={groupedData}>
+        <div class="cards-container">
+            <template for:each={groupedData} for:item="group">
+                <div key={group.category} class="card">
+                    <h2 class="card-title">{group.category}</h2>
+                    <ul class="card-list">
+                        <template for:each={group.items} for:item="item">
+                            <li key={item.label}>
+                                <a href={item.url} target="_blank">{item.label}</a>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
 </template>

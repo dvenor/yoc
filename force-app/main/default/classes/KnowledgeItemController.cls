@@ -1,23 +1,38 @@
 public with sharing class KnowledgeItemController {
+
     @AuraEnabled(cacheable=true)
-    public static List<CardData> getCards() {
-        return new List<CardData>{
-            new CardData('Card 1', 'Description of card 1'),
-            new CardData('Card 2', 'Description of card 2'),
-            new CardData('Card 3', 'Description of card 3'),
-            new CardData('Card 4', 'Description of card 4'),
-            new CardData('Card 5', 'Description of card 5'),
-            new CardData('Card 6', 'Description of card 6')
+    public static List<Card> getCards() {
+        // Replace this with your actual logic to fetch data.
+        return new List<Card>{
+            new Card('Category A', 'Item 1', 'https://example.com/1'),
+            new Card('Category A', 'Item 2', 'https://example.com/2'),
+            new Card('Category B', 'Item 3', 'https://example.com/3'),
+            new Card('Category B', 'Item 4', 'https://example.com/4'),
+            new Card('Category A', 'Item 1', 'https://example.com/1'),
+            new Card('Category A', 'Item 2', 'https://example.com/2'),
+            new Card('Category B', 'Item 3', 'https://example.com/3'),
+            new Card('Category B', 'Item 4', 'https://example.com/4'),
+            new Card('Category C', 'Item 1', 'https://example.com/1'),
+            new Card('Category C', 'Item 2', 'https://example.com/2'),
+            new Card('Category C', 'Item 3', 'https://example.com/3'),
+            new Card('Category E', 'Item 4', 'https://example.com/4'),
+            new Card('Category D', 'Item 1', 'https://example.com/1'),
+            new Card('Category F', 'Item 2', 'https://example.com/2'),
+            new Card('Category F', 'Item 3', 'https://example.com/3'),
+            new Card('Category G', 'Item 4', 'https://example.com/4')
+            // new Card(null, 'Item 5', 'https://example.com/5')
         };
     }
 
-    public class CardData {
-        @AuraEnabled public String title;
-        @AuraEnabled public String description;
+    public class Card {
+        @AuraEnabled public String category;
+        @AuraEnabled public String label;
+        @AuraEnabled public String url;
 
-        public CardData(String title, String description) {
-            this.title = title;
-            this.description = description;
+        public Card(String category, String label, String url) {
+            this.category = category;
+            this.label = label;
+            this.url = url;
         }
     }
 }
